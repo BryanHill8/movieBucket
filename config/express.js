@@ -12,6 +12,9 @@ var config = require('./config'),
 	flash = require('connect-flash'),
 	passport = require('passport');
 
+
+
+
 // Define the Express configuration method
 module.exports = function() {
 	// Create a new Express application instance
@@ -52,6 +55,7 @@ module.exports = function() {
 	// Load the routing files
 	require('../app/routes/index.server.routes.js')(app);
 	require('../app/routes/users.server.routes.js')(app);
+	require('../app/routes/movie.server.routes.js')(app);
 
 	// Configure static file serving
 	app.use(express.static('./public'));

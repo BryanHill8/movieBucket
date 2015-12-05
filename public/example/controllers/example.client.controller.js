@@ -7,4 +7,3 @@ angular.module('example').controller('ExampleController', ['$scope', 'Authentica
     $scope.authentication = Authentication;
   }
 ]);
-

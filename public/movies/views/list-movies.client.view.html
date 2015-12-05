@@ -1,0 +1,37 @@
+<section data-ng-controller="MoviesController" data-ng-init="find()">
+  <div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  
+  <div class="panel-heading" >
+       <div class="panel-title">List of Movies</div>
+   </div>
+   
+   <div class="panel panel-info">
+     <div class="panel-body">
+       <form class="form-horizontal" role="form">
+  <ul class="list-group">
+    <li data-ng-repeat ="movie in movies" class="list-item">
+      <a data-ng-href="#!/movies/{{movie._id}}" data-ng-bind="movie.title"></a>
+      <br>
+      <small data-ng-bind="movie.created | date:'medium'"></small>
+      <small>/</small>
+      <small data-ng-bind="movie.creator.fullName"></small>
+      <p data-ng-bind="movie.Description"></p>
+      <p data-ng-bind="movie.Genre"></p>
+      <p data-ng-bind="movie.Img"></p>
+    </li>
+  </ul>
+  </form>
+ <div data-ng-hide="!movies || movies.length">
+    No movies yet, lets <a href="/#!/movies/create">create one</a>?
+   </div>
+   </div>
+   </div>
+  </div>
+</section>

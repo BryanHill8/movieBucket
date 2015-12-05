@@ -4,14 +4,12 @@
     <a href="/signin">Signin</a>
   </div>
   <div data-ng-show="authentication.user">
-    <h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>
-    
-           <div style="margin-top:10px" class="form-group">
-                   <!-- Button -->
-             <div class="col-sm-12 controls">
-               <a href="/update">Update Account</a>
-              </div>
-           </div>
-    <a href="/signout">Signout</a>
-  </div>
+    <h1>Hello <span data-ng-bind="authentication.user.fullName"></span> Welcome to Movie Bucket</h1>
+               <ul>
+                  <li><a href="/#!/movies">List Movies</a></li>
+                  <li><a href="/#!/movies/create">Create Movie</a></li>
+              </ul>
+               <a href="/update">Update or Delete Account</a>       
+               <a href="/signout">Signout</a>
+      </div>
 </section>

@@ -1,0 +1,52 @@
+<section data-ng-controller="MoviesController" data-ng-init="findOne()">
+<div class="container">   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+   <div class="panel-heading" >
+       <div class="panel-title">Edit Movie</div>
+   </div>
+ <div class="panel panel-info">
+   <div class="panel-body">
+     <form data-ng-submit="update()" novalidate class="form-horizontal" role="form">
+       
+       <div style="margin-bottom: 25px" class="input-group">
+           <span class="input-group-addon"><i class="glyphicon glyphicon-film"></i></span>
+             <input id="title" type="text" data-ng-model="title" class="form-control" name="title"placeholder="Title">                                        
+       </div>   
+       
+       <div style="margin-bottom: 25px" class="input-group">
+           <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+             <textarea id="Description" type="text" data-ng-model="Description" class="form-control" rows="3" name="Description" placeholder="Description"></textarea>                                     
+       </div>
+       
+        <div>
+        <label for="Genre">Genre</label>
+       </div>
+       
+      <div style="margin-bottom: 25px" class="input-group">
+        <select class="form-control" data-ng-model="Genre" id="Genre" cols="30" rows="10" placeholder="Genre">
+        	  <option value="horror">Horror</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+        </select>
+      </div>
+     
+     <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+         <div class="col-sm-12 controls">
+            <input type="submit" value="Update" class="btn btn-success"></input>
+         </div>
+      </div>   
+    <div data-ng-show="error">
+      <strong data-ng-bind="error"></strong>
+    </div>
+   </form>
+   </div>
+  </div>
+ </div>
+</section>

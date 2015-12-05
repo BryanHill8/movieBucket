@@ -191,6 +191,20 @@ exports.delete = function(req, res) {
   });
 };
 
+exports.renderMovie = function(req, res, next) {
+	// If user is not connected render the signup page, otherwise redirect the user back to the main application page
+	if (req.user) {
+		// Use the 'response' object to render the update page
+		res.render('movie', {
+			// Set the page title variable
+			title: 'movieform',
+			// Set the flash message varia
+			messages: req.flash('error')
+		});
+	} else {
+		return res.redirect('/');
+	}
+};
 // Create a new controller method for signing out 
 exports.signout = function(req, res) {
 	// Use the Passport 'logout' method to logout
